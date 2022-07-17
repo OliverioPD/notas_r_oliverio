@@ -1,7 +1,22 @@
 output_dir: docs
-delete_merged_file: true
+new_session: no
 edit: https://github.com/OliverioPD/notas_r_oliverio/edit/master/%s
 view: https://github.com/OliverioPD/notas_r_oliverio/blob/master/%s
 language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabla '
+    eq: 'Ecuación '
+    thm: 'Teorema '
+    lem: 'Lema '
+    def: 'Definición '
+    cor: 'Corolario '
+    prp: 'Proposición '
+    exm: 'Ejemplo '
+    exr: 'Ejercicio '
+    proof: 'Demostración. '
+    remark: 'Nota: '
+    solution: 'Solución. '
   ui:
-    chapter_name: "Capítulo "
+    chapter_name: 'Capítulo '
+delete_merged_file: yes
