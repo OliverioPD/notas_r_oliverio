@@ -2,8 +2,8 @@ fig:nice-fig
 tab:nice-tab
 eq:binom
 thm:tri
-iniciando
-usage
+configuraciones-y-atajos-recomendaciones
+teclas-rápidas-keyboard-shortcuts
 render-book
 preview-book
 hello-bookdown
