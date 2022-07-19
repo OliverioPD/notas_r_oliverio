@@ -18,85 +18,80 @@ url: 'https\://github.com/OliverioPD/notas_r_oliverio/'
 github-repo:  'OliverioPD/notas_r_oliverio/'
 ---
 
-# Configuraciones y atajos: recomendaciones
+# CONFIGURACIONES Y ATAJOS: RECOMENDACIONES
 
 Es útil tener presente la siguiente configuración y recomendaciones para agilizar el trabajo en RStudio (versión 2022.02.3). Recomiendo desarrollar la habilidad de trabajar, en lo sumo posible, solo con el teclado y dejar el uso del mouse parcial o totalmente. Tener en cuenta que todo lo mencionado en estas notas se está realizando en el sistema operativo Windows.
 
-## Teclas rápidas (Keyboard shortcuts)
+## Atajos (Keyboard shortcuts)
 
 Para liberarse del yugo del mouse. :)
 
-| Descripción                                                 | Tecla rápida                       |
-|-------------------------------------------------------------|------------------------------------|
-| Panel de teclas rápidas                                     | Alt+Shif+K                         |
-| Ejecutar la línea actual y cambia a la línea siguiente      | Ctrl+Enter                         |
-| Ejecutar la línea actual y no cambia a la línea siguiente   | Alt+Enter                          |
-| Ejecutar todo el chunk actual                               | Ctrl+Shift+Enter                   |
-| Ejecutar todo el script                                     | Ctrl+Alt+R                         |
-| Cambiar a comentario una línea de código                    | Ctrl+Shift+C                       |
-| \|\>                                                        | Ctrl+Shift+M                       |
-| \<-                                                         | Alt+-                              |
-| Buscar y reemplazar                                         | Ctrl+F                             |
-| Buscar archivos                                             | Ctrl+Shift+F                       |
-| Buscar función                                              | Ctrl+.                             |
-| Eliminar línea de código                                    | Ctrl+D                             |
-| Cambiar de pestaña hacia la derecha                         | Ctrl+Tab                           |
-| Cambiar de pestaña hacia la izquierda                       | Ctrl+Shift+Tab                     |
-| Ubicar el paréntesis de cierre de un paréntesis de abrida   | Ctrl+P                             |
-| Mover línea de código hacia arriba/abajo                    | Alt+up/down                        |
-| Copiar línea de código en una nueva línea superior/inferior | Alt+Shift+up/down                  |
-| Hacer zoom al script                                        | Ctrl++/-                           |
-| Escribir en múltiples líneas de forma simultánea            | Alt+drag (drag: arrastra el mouse) |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
-|                                                             |                                    |
++---------------------------------------------------------------------------+------------------------------------+
+| Descripción                                                               | Tecla rápida                       |
++===========================================================================+====================================+
+| Panel de teclas rápidas                                                   | Alt+Shif+K                         |
++---------------------------------------------------------------------------+------------------------------------+
+| Ejecutar la línea actual y cambia a la línea siguiente                    | Ctrl+Enter                         |
++---------------------------------------------------------------------------+------------------------------------+
+| Ejecutar la línea actual y no cambia a la línea siguiente                 | Alt+Enter                          |
++---------------------------------------------------------------------------+------------------------------------+
+| Ejecutar todo el chunk actual                                             | Ctrl+Shift+Enter                   |
++---------------------------------------------------------------------------+------------------------------------+
+| Ejecutar todo el script                                                   | Ctrl+Alt+R                         |
++---------------------------------------------------------------------------+------------------------------------+
+| Cambiar a comentario una línea de código                                  | Ctrl+Shift+C                       |
++---------------------------------------------------------------------------+------------------------------------+
+| \|\>                                                                      | Ctrl+Shift+M                       |
++---------------------------------------------------------------------------+------------------------------------+
+| \<-                                                                       | Alt+-                              |
++---------------------------------------------------------------------------+------------------------------------+
+| Buscar y reemplazar                                                       | Ctrl+F                             |
++---------------------------------------------------------------------------+------------------------------------+
+| Buscar archivos                                                           | Ctrl+Shift+F                       |
++---------------------------------------------------------------------------+------------------------------------+
+| Buscar función                                                            | Ctrl+.                             |
++---------------------------------------------------------------------------+------------------------------------+
+| Eliminar línea de código                                                  | Ctrl+D                             |
++---------------------------------------------------------------------------+------------------------------------+
+| Cambiar de pestaña hacia la derecha (source)                              | Ctrl+Tab (Ctrl+Alt+right)          |
++---------------------------------------------------------------------------+------------------------------------+
+| Cambiar de pestaña hacia la izquierda (source)                            | Ctrl+Shift+Tab (Ctrl+Alt+left)     |
++---------------------------------------------------------------------------+------------------------------------+
+| Ubicar el paréntesis de cierre de un paréntesis de apertura               | Ctrl+P                             |
++---------------------------------------------------------------------------+------------------------------------+
+| Mover línea de código hacia arriba/abajo                                  | Alt+up/down                        |
++---------------------------------------------------------------------------+------------------------------------+
+| Copiar línea de código en una nueva línea superior/inferior               | Alt+Shift+up/down                  |
++---------------------------------------------------------------------------+------------------------------------+
+| Hacer zoom al script                                                      | Ctrl++/-                           |
++---------------------------------------------------------------------------+------------------------------------+
+| Escribir en múltiples líneas de forma simultánea                          | Alt+drag (drag: arrastra el mouse) |
+|                                                                           |                                    |
+|                                                                           | Ctrl+Alt+down                      |
++---------------------------------------------------------------------------+------------------------------------+
+| Escoger script (source)                                                   | Ctrl+1                             |
++---------------------------------------------------------------------------+------------------------------------+
+| Escoger consola (console)                                                 | Ctrl+2                             |
++---------------------------------------------------------------------------+------------------------------------+
+| Ir a una línea de código específica                                       | Alt+Shift+G                        |
++---------------------------------------------------------------------------+------------------------------------+
+| Abrir nuevo script (.R)                                                   | Ctrl+Shift+N                       |
++---------------------------------------------------------------------------+------------------------------------+
+| Cerrar un script (.R)                                                     | Ctrl+W                             |
++---------------------------------------------------------------------------+------------------------------------+
+| Desplegar la pestaña Fiel/Edit/Code/View/Plots/...                        | Alt, +, F/E/C/V/P/S/...            |
++---------------------------------------------------------------------------+------------------------------------+
+| Generar libro (Build book)                                                | Ctrl+Shift+B                       |
++---------------------------------------------------------------------------+------------------------------------+
+| Selecionar caracteres desde la posición actual hasta encontrar un espacio | Ctrl+Shift+right                   |
++---------------------------------------------------------------------------+------------------------------------+
+|                                                                           |                                    |
++---------------------------------------------------------------------------+------------------------------------+
+|                                                                           |                                    |
++---------------------------------------------------------------------------+------------------------------------+
+|                                                                           |                                    |
++---------------------------------------------------------------------------+------------------------------------+
 
-## Render book
+## Configuraciones
 
-sdsd
-
-## Preview book
-
-assad
+asd

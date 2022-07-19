@@ -31,7 +31,7 @@
   
   
 
-<link rel="next" href="hello-bookdown.html"/>
+<link rel="next" href="visualización-ggplot2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -158,17 +158,16 @@ div.csl-indent {
 <li><a href="./">Notas de R para no morir al recordar código</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Configuraciones y atajos: recomendaciones</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> CONFIGURACIONES Y ATAJOS: RECOMENDACIONES</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#teclas-rápidas-keyboard-shortcuts"><i class="fa fa-check"></i><b>1.1</b> Teclas rápidas (Keyboard shortcuts)</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#atajos-keyboard-shortcuts"><i class="fa fa-check"></i><b>1.1</b> Atajos (Keyboard shortcuts)</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#configuraciones"><i class="fa fa-check"></i><b>1.2</b> Configuraciones</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
+<li class="chapter" data-level="2" data-path="visualización-ggplot2.html"><a href="visualización-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Visualización (GGPLOT2)</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="hello-bookdown.html"><a href="hello-bookdown.html#a-section"><i class="fa fa-check"></i><b>2.1</b> A section</a>
+<li class="chapter" data-level="2.1" data-path="visualización-ggplot2.html"><a href="visualización-ggplot2.html#a-section"><i class="fa fa-check"></i><b>2.1</b> A section</a>
 <ul>
-<li class="chapter" data-level="" data-path="hello-bookdown.html"><a href="hello-bookdown.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+<li class="chapter" data-level="" data-path="visualización-ggplot2.html"><a href="visualización-ggplot2.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>3</b> Cross-references</a>
@@ -221,10 +220,10 @@ div.csl-indent {
 <p class="date"><em>2022</em></p>
 </div>
 <div id="configuraciones-y-atajos-recomendaciones" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Capítulo 1</span> Configuraciones y atajos: recomendaciones<a href="index.html#configuraciones-y-atajos-recomendaciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Capítulo 1</span> CONFIGURACIONES Y ATAJOS: RECOMENDACIONES<a href="index.html#configuraciones-y-atajos-recomendaciones" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Es útil tener presente la siguiente configuración y recomendaciones para agilizar el trabajo en RStudio (versión 2022.02.3). Recomiendo desarrollar la habilidad de trabajar, en lo sumo posible, solo con el teclado y dejar el uso del mouse parcial o totalmente. Tener en cuenta que todo lo mencionado en estas notas se está realizando en el sistema operativo Windows.</p>
-<div id="teclas-rápidas-keyboard-shortcuts" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Teclas rápidas (Keyboard shortcuts)<a href="index.html#teclas-rápidas-keyboard-shortcuts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="atajos-keyboard-shortcuts" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Atajos (Keyboard shortcuts)<a href="index.html#atajos-keyboard-shortcuts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Para liberarse del yugo del mouse. :)</p>
 <table>
 <colgroup>
@@ -287,15 +286,15 @@ div.csl-indent {
 <td>Ctrl+D</td>
 </tr>
 <tr class="odd">
-<td>Cambiar de pestaña hacia la derecha</td>
-<td>Ctrl+Tab</td>
+<td>Cambiar de pestaña hacia la derecha (source)</td>
+<td>Ctrl+Tab (Ctrl+Alt+right)</td>
 </tr>
 <tr class="even">
-<td>Cambiar de pestaña hacia la izquierda</td>
-<td>Ctrl+Shift+Tab</td>
+<td>Cambiar de pestaña hacia la izquierda (source)</td>
+<td>Ctrl+Shift+Tab (Ctrl+Alt+left)</td>
 </tr>
 <tr class="odd">
-<td>Ubicar el paréntesis de cierre de un paréntesis de abrida</td>
+<td>Ubicar el paréntesis de cierre de un paréntesis de apertura</td>
 <td>Ctrl+P</td>
 </tr>
 <tr class="even">
@@ -312,167 +311,32 @@ div.csl-indent {
 </tr>
 <tr class="odd">
 <td>Escribir en múltiples líneas de forma simultánea</td>
-<td>Alt+drag (drag: arrastra el mouse)</td>
+<td><p>Alt+drag (drag: arrastra el mouse)</p>
+<p>Ctrl+Alt+down</p></td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
+<td>Escoger script (source)</td>
+<td>Ctrl+1</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td></td>
+<td>Escoger consola (console)</td>
+<td>Ctrl+2</td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
+<td>Ir a una línea de código específica</td>
+<td>Alt+Shift+G</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td></td>
+<td>Abrir nuevo script (.R)</td>
+<td>Ctrl+Shift+N</td>
 </tr>
 <tr class="even">
-<td></td>
-<td></td>
+<td>Cerrar un script (.R)</td>
+<td>Ctrl+W</td>
 </tr>
 <tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
+<td>Desplegar la pestaña Fiel/Edit/Code/View/Plots/…</td>
+<td>Alt, +, F/E/C/V/P/S/…</td>
 </tr>
 <tr class="even">
 <td></td>
@@ -497,13 +361,9 @@ div.csl-indent {
 </tbody>
 </table>
 </div>
-<div id="render-book" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Render book<a href="index.html#render-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>sdsd</p>
-</div>
-<div id="preview-book" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Preview book<a href="index.html#preview-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>assad</p>
+<div id="configuraciones" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Configuraciones<a href="index.html#configuraciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>asd</p>
 
 </div>
 </div>
@@ -513,7 +373,7 @@ div.csl-indent {
         </div>
       </div>
 
-<a href="hello-bookdown.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="visualización-ggplot2.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
