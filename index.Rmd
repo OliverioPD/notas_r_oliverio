@@ -94,7 +94,7 @@ Para liberarse del yugo del mouse. :)
 
 ## Sugerencias
 
-Algunas sugerencias a tener en cuenta para tener un trabajo y código más ordenado.
+Algunas sugerencias a tener en cuenta para tener un trabajo y código más ordenado y rápido.
 
 1.  **Dar formato al código.**[^index-1]
 
