@@ -2,9 +2,9 @@ fig:nice-fig
 tab:nice-tab
 eq:binom
 thm:tri
-configuraciones-y-atajos-recomendaciones
+recomendaciones
 atajos-keyboard-shortcuts
-configuraciones
+sugerencias
 visualización-ggplot2
 a-section
 cross

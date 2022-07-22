@@ -12,4 +12,11 @@ Encoding: UTF-8
 RnwWeave: Sweave
 LaTeX: pdfLaTeX
 
+AutoAppendNewline: Yes
+StripTrailingWhitespace: Yes
+
 BuildType: Website
+
+PythonType: system
+PythonVersion: 3.10.4
+PythonPath: C:/Users/OPD2022/AppData/Local/Programs/Python/Python310/python.exe
