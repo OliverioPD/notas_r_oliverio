@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Visualización - GGPLOT2 | Notas de R para no morir al recordar código</title>
+  <meta name="description" content="Capítulo 2 Visualización - GGPLOT2 | Notas de R para no morir al recordar código" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Visualización - GGPLOT2 | Notas de R para no morir al recordar código" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="OliverioPD/notas_r_oliverio/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Visualización - GGPLOT2 | Notas de R para no morir al recordar código" />
+  
+  
+  
+
+<meta name="author" content="Oliverio Pichardo D." />
+
+
+<meta name="date" content="2022-01-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="cross.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Notas de R para no morir al recordar código</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Recomendaciones</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#atajos-keyboard-shortcuts"><i class="fa fa-check"></i><b>1.1</b> Atajos (Keyboard shortcuts)</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#sugerencias"><i class="fa fa-check"></i><b>1.2</b> Sugerencias</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="visualización---ggplot2.html"><a href="visualización---ggplot2.html"><i class="fa fa-check"></i><b>2</b> Visualización - GGPLOT2</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="visualización---ggplot2.html"><a href="visualización---ggplot2.html#importación-del-conjunto-de-datos"><i class="fa fa-check"></i><b>2.1</b> Importación del conjunto de datos</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualización---ggplot2.html"><a href="visualización---ggplot2.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>3</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>3.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="3.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>3.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a></li>
+<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
+<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
+<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
+<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
+<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Notas de R para no morir al recordar código</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualización---ggplot2" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Visualización - GGPLOT2<a href="visualización---ggplot2.html#visualización---ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Primero elijamos el conjunto de datos (dataset) a emplear.</p>
+<div id="importación-del-conjunto-de-datos" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Importación del conjunto de datos<a href="visualización---ggplot2.html#importación-del-conjunto-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los datos a utilizar en estas notas son los recolectados por el Instituto Nacional de Estadística e Informática (INEI) en la Encuesta Nacional de Hogares (ENAHO) del año 2019. Se descargaron dos conjuntos de datos de una base de datos de MICRODATOS<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> de INEI que contienen las variables de interés y se procedió a realizar diversas acciones a fin de obtener el dataset que se va a emplear. Específicamente, se escogieron los datos correspondientes a los módulos Educación y Empleo e Ingresos del 2019 de ENAHO.</p>
+<p>El dataset a considerar contiene información sociodemográfica, educativa y salarial de un conjunto de personas de Huancavelica (ver el siguiente cuadro).</p>
+<div class="figure">
+<img src="diccionario_prep_oliveriop.png" alt="" />
+<p class="caption">Diccionario del dataset preprocesado. Fuente: Elaboración propia</p>
+</div>
+<ol style="list-style-type: decimal">
+<li><p><strong>Importar el dataset <em>dataset_prep_oliveriop</em></strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="visualización---ggplot2.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p_install(readxl)</span></span>
+<span id="cb7-2"><a href="visualización---ggplot2.html#cb7-2" aria-hidden="true" tabindex="-1"></a>datosop <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="at">path =</span> <span class="st">&quot;dataset_prep_oliveriop.xlsx&quot;</span>,</span>
+<span id="cb7-3"><a href="visualización---ggplot2.html#cb7-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">col_types =</span> <span class="st">&quot;text&quot;</span>, </span>
+<span id="cb7-4"><a href="visualización---ggplot2.html#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="visualización---ggplot2.html#cb7-5" aria-hidden="true" tabindex="-1"></a>                              <span class="at">na =</span> <span class="st">&quot;NA&quot;</span>)</span></code></pre></div>
+<ul>
+<li><p><code>readxl</code>: paquete para importar archivos de Excel a R. Admite archivos <code>.xls</code> y <code>.xlsx</code>.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p></li>
+<li><p><code>read_excel</code>: función de readxl para importar archivos <code>.xls</code> y <code>.xlsx</code>. Tiene los siguientes argumentos:<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
+<p><a href="https://cran.r-project.org/web/packages/readxl/readxl.pdf"><img src="read_excel.png" width="187" alt="Argumentos de read_excel. Fuente: Reference manual “readxl”" /></a></p>
+<p>Ahora, toca poner en práctica el inglés<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
+<table>
+<caption>Descripción de los argumentos de read_excel. Fuente: <a href="https://cran.r-project.org/web/packages/readxl/readxl.pdf" class="uri">https://cran.r-project.org/web/packages/readxl/readxl.pdf</a></caption>
+<colgroup>
+<col width="27%" />
+<col width="72%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Argumento</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>path</td>
+<td>Path to the xls/xlsx file.</td>
+</tr>
+<tr class="even">
+<td>sheet</td>
+<td>Sheet to read. Either a string (the name of a sheet), or an integer (the position of the sheet). Ignored if the sheet is specified via range. If neither argument specifies the sheet, defaults to the first sheet.</td>
+</tr>
+<tr class="odd">
+<td>range</td>
+<td>A cell range to read from, as described in cell-specification. Includes typical Excel ranges like “B3:D87”, possibly including the sheet name like “Budget! B2:G14”, and more. Interpreted strictly, even if the range forces the inclusion of leading or trailing empty rows or columns. Takes precedence over skip, n_max and sheet.</td>
+</tr>
+<tr class="even">
+<td>col_names</td>
+<td>TRUE to use the first row as column names, FALSE to get default names, or a character vector giving a name for each column. If user provides col_types as a vector, col_names can have one entry per column, i.e. have the same length as col_types, or one entry per unskipped column.</td>
+</tr>
+<tr class="odd">
+<td>col_types</td>
+<td>Either NULL to guess all from the spreadsheet or a character vector containing one entry per column from these options: “skip”, “guess”, “logical”, “numeric”, “date”, “text” or “list”. If exactly one col_type is specified, it will be recycled. The content of a cell in a skipped column is never read and that column will not appear in the data frame output. A list cell loads a column as a list of length 1 vectors, which are typed using the type guessing logic from col_types = NULL, but on a cell-by-cell basis.</td>
+</tr>
+<tr class="even">
+<td>na</td>
+<td>Character vector of strings to interpret as missing values. By default, readxl treats blank cells as missing data.</td>
+</tr>
+<tr class="odd">
+<td>trim_ws</td>
+<td>Should leading and trailing whitespace be trimmed?</td>
+</tr>
+<tr class="even">
+<td>skip</td>
+<td>Minimum number of rows to skip before reading anything, be it column names or data. Leading empty rows are automatically skipped, so this is a lower bound. Ignored if range is given.</td>
+</tr>
+<tr class="odd">
+<td>n_max</td>
+<td>Maximum number of data rows to read. Trailing empty rows are automatically skipped, so this is an upper bound on the number of rows in the returned tibble. Ignored if range is given.</td>
+</tr>
+<tr class="even">
+<td>guess_max</td>
+<td>Maximum number of data rows to use for guessing column types.</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li><p><strong>Resumen estadístico de las variables del dataset</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="visualización---ggplot2.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pacman::p_load(skimr)</span></span>
+<span id="cb8-2"><a href="visualización---ggplot2.html#cb8-2" aria-hidden="true" tabindex="-1"></a>datosop <span class="sc">|&gt;</span> skimr<span class="sc">::</span><span class="fu">skim</span>()</span></code></pre></div>
+<table>
+<caption><span id="tab:resumen">Tabla 2.1: </span>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">datosop</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">2056</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">7</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">7</td>
+</tr>
+<tr class="odd">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="23%" />
+<col width="13%" />
+<col width="18%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="11%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">area_geografica</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">sexo</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">nivel_estudio</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">10</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">edad</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">80</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">tipo_informalidad</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">ingreso_laboral</td>
+<td align="right">578</td>
+<td align="right">0.72</td>
+<td align="right">1</td>
+<td align="right">16</td>
+<td align="right">0</td>
+<td align="right">1128</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">educacion</td>
+<td align="right">0</td>
+<td align="right">1.00</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">17</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>skimr</code>: paquete para generar resúmenes estadísticos de un dataframe o vector.<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p></li>
+<li><p><code>skim</code>: función de skimr para generar un resumen general de un dataframe.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a></p>
+<p><a href="https://cran.r-project.org/web/packages/skimr/skimr.pdf"><img src="skimr.png" width="629" alt="Descripción de skimr y skim. Fuente:" /></a></p></li>
+</ul></li>
+<li><p><strong>Coercionar las variables del dataset</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="visualización---ggplot2.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pacman::p_load(tidyverse)</span></span>
+<span id="cb9-2"><a href="visualización---ggplot2.html#cb9-2" aria-hidden="true" tabindex="-1"></a>dataf <span class="ot">&lt;-</span> datosop <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">mutate</span>()</span></code></pre></div></li>
+<li><p>zx</p></li>
+</ol>
+<div id="an-unnumbered-section" class="section level3 unnumbered hasAnchor">
+<h3>An unnumbered section<a href="visualización---ggplot2.html#an-unnumbered-section" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>sd</p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="6">
+<li id="fn6"><p><a href="http://iinei.inei.gob.pe/microdatos/" class="uri">http://iinei.inei.gob.pe/microdatos/</a><a href="visualización---ggplot2.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://cran.r-project.org/web/packages/readxl/index.html" class="uri">https://cran.r-project.org/web/packages/readxl/index.html</a><a href="visualización---ggplot2.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p><a href="https://cran.r-project.org/web/packages/readxl/readxl.pdf" class="uri">https://cran.r-project.org/web/packages/readxl/readxl.pdf</a><a href="visualización---ggplot2.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>Por ahora, no tengo suficiente tiempo para traducir. Recomiendo que comprendan lo leído en inglés directamente, es decir, procuren no realizar procesos de traducción y comprensión en su mente.<a href="visualización---ggplot2.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p><a href="https://cran.r-project.org/web/packages/skimr/index.html" class="uri">https://cran.r-project.org/web/packages/skimr/index.html</a><a href="visualización---ggplot2.html#fnref10" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p><a href="https://cran.r-project.org/web/packages/skimr/skimr.pdf" class="uri">https://cran.r-project.org/web/packages/skimr/skimr.pdf</a><a href="visualización---ggplot2.html#fnref11" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cross.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/OliverioPD/notas_r_oliverio/edit/BRANCH/01-intro.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/OliverioPD/notas_r_oliverio/blob/master/01-intro.Rmd",
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

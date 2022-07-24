@@ -1,3 +1,4 @@
+tab:resumen
 fig:nice-fig
 tab:nice-tab
 eq:binom
@@ -5,8 +6,8 @@ thm:tri
 recomendaciones
 atajos-keyboard-shortcuts
 sugerencias
-visualización-ggplot2
-a-section
+visualización---ggplot2
+importación-del-conjunto-de-datos
 cross
 chapters-and-sub-chapters
 captioned-figures-and-tables

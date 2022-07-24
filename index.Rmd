@@ -85,7 +85,7 @@ Para liberarse del yugo del mouse. :)
 +----------------------------------------------------------------------------+------------------------------------+
 | Seleccionar caracteres desde la posición actual hasta encontrar un espacio | Ctrl+Shift+right                   |
 +----------------------------------------------------------------------------+------------------------------------+
-|                                                                            |                                    |
+| Colocar una sección en el script                                           | Ctrl+Shift+R                       |
 +----------------------------------------------------------------------------+------------------------------------+
 |                                                                            |                                    |
 +----------------------------------------------------------------------------+------------------------------------+
@@ -99,8 +99,8 @@ Algunas sugerencias a tener en cuenta para tener un trabajo y código más orden
 1.  **Dar formato al código.**[^index-1]
 
     ```{r formatR, eval=FALSE}
-    install.packages("formatR") # instala el paquete
-    library(formatR)            # carga el paquete
+    install.packages("formatR") # instala el paquete formatR
+    library(formatR)            # carga el paquete formatR
     tidy_app()                  # abre la app de formateo para R
     # si se va a usar formatR::tidy_app(), no es necesario cargar el paquete
     ```
@@ -114,15 +114,44 @@ Algunas sugerencias a tener en cuenta para tener un trabajo y código más orden
 
 3.  **Maximizar uso de recursos.**[^index-3]
 
-    ```{r}
+    ```{r recursos_compu, eval=FALSE}
     options(Ncpus=10)
     options(mc.cores=8)
     ```
 
-4.  XD
+4.  **Instalar tema** `BrackInstitute`**.**[^index-4] Es un buen tema para no perderse en el mar de código.
+
+    ```{r tema_BrackInstitute, eval=FALSE}
+    install.packages("rstudioapi")
+    tema_BrackInstitute <- fs::path_temp("tema_BrackInstitute", ext = "tmTheme")
+    download.file("https://raw.githubusercontent.com/irwingss/Primolius-Theme/main/BrackInstitute.tmTheme",tema_BrackInstitute)
+    rstudioapi::addTheme(tema_BrackInstitute, apply = TRUE)
+    ```
+
+5.  **Gestionador de paquetes** `pacman`**.**[^index-5]
+
+    ```{r pacman, eval=FALSE, warning=FALSE}
+    install.packages('pacman') # instala el paquete pacman
+    library(pacman)            # carga el paquete pacman
+    ```
+
+    Para poner a disposición algún otro paquete, bastará escribir:
+
+    ```{r p_load, eval=FALSE}
+    p_load(nombre_del_paquete)
+    ```
+
+    -   `pacman`: paquete para administrar paquetes en R.
+    -   `p_load`: función de pacman para instalar o cargar paquetes. Si el paquete no está instalado, entonces lo instala y carga. Caso contrario, solo lo carga.
+
+6.  Paso a paso, Oliverio...
 
 [^index-1]: <https://cran.r-project.org/web/packages/formatR/index.html>
 
 [^index-2]: <https://lintr.r-lib.org/>
 
 [^index-3]: <https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/options>
+
+[^index-4]: <https://github.com/irwingss/Primolius-Theme> (Elaborado por Irwing S. Saldaña)
+
+[^index-5]: <https://www.rdocumentation.org/packages/pacman/versions/0.5.1>
